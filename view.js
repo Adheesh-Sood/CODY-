@@ -2,20 +2,23 @@
 //Variables 
 
 var lang = "none";
+//..................
+var input=document.getElementById("search");
 //................................................................
 document.getElementById("search").display = ""
 document.getElementById('py').style.display = "none"
 document.getElementById("innerSearch").style.display = "none"
     //................................................................
-document.getElementById("go").onclick = function() {
-    var search = document.getElementById("searchLang").value;
-    if (search == "python") {
-        document.getElementById("search").style.display = "none"
-        document.getElementById("search").display = "none"
-        document.getElementById("innerSearch").style.display = ""
-        document.getElementById("innerSearch").value = "Python :: "
-        document.getElementById("innerBtn").style.display = ""
-        lang = "python";
+input.addEventListener("keypress", function (event) {
+    if (event.key == "Enter") {
+         var search = document.getElementById("searchLang").value;
+        if (search == "python") {
+            document.getElementById("search").style.display = "none"
+            document.getElementById("search").display = "none"
+            document.getElementById("innerSearch").style.display = ""
+            document.getElementById("innerSearch").value = "Python :: "
+            document.getElementById("innerBtn").style.display = ""
+            lang = "python";
 
     } else if (search == "Python") {
         document.getElementById("search").style.display = "none"
@@ -133,7 +136,7 @@ document.getElementById("go").onclick = function() {
 
 
 }
-document.getElementById('innerBtn').onclick = function() {
+document.getElementById('innerBtn').onclick = function () {
 
     if (lang == "python") {
         console.log("python")
@@ -149,3 +152,6 @@ document.getElementById('innerBtn').onclick = function() {
         console.log('c#')
     }
 }
+    }
+)
+   

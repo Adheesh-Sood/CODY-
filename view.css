@@ -1,8 +1,25 @@
 .head {
+    text-align:center;
+    background-clip:text ;
     font-family: 'Rubik Moonrocks', cursive;
-    color: #fff;
+background-image: linear-gradient(120deg, #a1c4fd 0%, #c2e9fb 100%);
+
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 body {
-    background-color: black;
+    background-color: #262335;
 }
+input{
+    font-size:24px;
+    text-align:center;
+    border:1px solid #262335;;
+    border-radius: 25px;
+    background: #56FFC9;
+    padding: 20px;
+    width: 96%;
+    height: 0.1px;
+
+
+    }
