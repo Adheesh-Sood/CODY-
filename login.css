@@ -88,3 +88,23 @@ img {
 .man {
     padding-right: 400000px;
 }
+
+.checkNet {
+    background-color: red;
+    display: none;
+
+}
+
+.field {
+    color: #1271bf;
+    background-color: transparent;
+    font-weight: bold;
+    font-size: 19px;
+    text-align: center;
+    height: 30px;
+    border: none;
+    width: 900px;
+    ;
+}
+
+.field:hover {}
