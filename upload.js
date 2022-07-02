@@ -15,17 +15,17 @@ const firebaseConfig = {
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
-var database = firebase.database();
+var database = firebaseConfig.database(app);
 var ref = database.ref('code')
 document.getElementById('langDiv').style.display = 'none'
 var lang = document.getElementById('langDiv');
-document.getElementById('selectLangBtnMain').onclick = function() {
+document.getElementById('selectLangBtnMain').onclick = function () {
     document.getElementById('langDiv').style.display = ''
     document.getElementById('selectLangBtnMain').style.display = 'none'
 }
 
 
-document.getElementById('langHtmlBtn').onclick = function() {
+document.getElementById('langHtmlBtn').onclick = function () {
     document.getElementById('langHtmlBtn').style.display
     document.getElementById('go').style.display = ''
     document.getElementById('textUploadCode').style.display = ''
@@ -34,7 +34,7 @@ document.getElementById('langHtmlBtn').onclick = function() {
 
 
 }
-document.getElementById('langCssBtn').onclick = function() {
+document.getElementById('langCssBtn').onclick = function () {
     document.getElementById('go').style.display = ''
 
     document.getElementById('textUploadCode').style.display = ''
@@ -43,7 +43,7 @@ document.getElementById('langCssBtn').onclick = function() {
 
 
 }
-document.getElementById('langJsBtn').onclick = function() {
+document.getElementById('langJsBtn').onclick = function () {
     document.getElementById('go').style.display = ''
 
     document.getElementById('textUploadCode').style.display = ''
@@ -52,7 +52,7 @@ document.getElementById('langJsBtn').onclick = function() {
 
 
 }
-document.getElementById('langPyBtn').onclick = function() {
+document.getElementById('langPyBtn').onclick = function () {
     document.getElementById('go').style.display = ''
 
     document.getElementById('textUploadCode').style.display = ''
@@ -61,14 +61,14 @@ document.getElementById('langPyBtn').onclick = function() {
 
 
 }
-document.getElementById('langCpBtn').onclick = function() {
+document.getElementById('langCpBtn').onclick = function () {
     document.getElementById('go').style.display = ''
 
     document.getElementById('textUploadCode').style.display = ''
 
 
 }
-document.getElementById('langCsBtn').onclick = function() {
+document.getElementById('langCsBtn').onclick = function () {
     document.getElementById('go').style.display = ''
 
     document.getElementById('textUploadCode').style.display = ''
@@ -81,6 +81,6 @@ var data = {
     a: document.getElementById('textUploadCode').value
 
 }
-document.getElementById('go').onclick = function() {
+document.getElementById('go').onclick = function () {
     ref.push(data);
 }
