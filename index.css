@@ -1,7 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Fascinate+Inline&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
-
 body,
 html {
     background-color: #000000;
@@ -143,7 +142,7 @@ button::before {
 
 input {
     font-family: cursive;
-    transition: width 2s;
+    transition: width 6s;
     font-size: 24px;
     text-align: center;
     border: 1px solid #262335;
@@ -153,13 +152,12 @@ input {
     padding: 20px;
     width: 300px;
     height: 0.1px;
-
-
 }
 
 input:hover {
     width: 96%;
-    background-color: #262335;
+    background-color: black;
+    ;
     color: #56FFC9;
     border: 3px solid black;
     transition: 2s ease-in-out;
