@@ -1,86 +1,99 @@
+// Import the functions you need from the SDKs you need
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.8.4/firebase-app.js";
+import { getDatabase, ref, set, push } from "https://www.gstatic.com/firebasejs/9.8.4/firebase-database.js"
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-    apiKey: "AIzaSyAzMjbfCRxvsa9sO5V5AOpun39P3Bn5BQQ",
-    authDomain: "cody-cc9a5.firebaseapp.com",
-    projectId: "cody-cc9a5",
-    databaseURL: "https://cody-cc9a5-default-rtdb.firebaseio.com/",
-    storageBucket: "cody-cc9a5.appspot.com",
-    messagingSenderId: "1064418253596",
-    appId: "1:1064418253596:web:732e3ee1a015546439f8d9"
+  apiKey: "AIzaSyDpnibzSE0ygWpQFbrio3xY85_xq7kotvs",
+  authDomain: "uploadpleasework.firebaseapp.com",
+  databaseURL: "https://uploadpleasework-default-rtdb.firebaseio.com/",
+  projectId: "uploadpleasework",
+  storageBucket: "uploadpleasework.appspot.com",
+  messagingSenderId: "1019661590610",
+  appId: "1:1019661590610:web:4f69fd16fe7bf6fcff3f8b"
 };
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
-var database = firebaseConfig.database(app);
-var ref = database.ref('code')
-document.getElementById('langDiv').style.display = 'none'
-var lang = document.getElementById('langDiv');
-document.getElementById('selectLangBtnMain').onclick = function () {
-    document.getElementById('langDiv').style.display = ''
-    document.getElementById('selectLangBtnMain').style.display = 'none'
+
+
+document.getElementById("html").onclick = function () {
+
+  function writeUserData(code) {
+
+    const db = getDatabase();
+    const postListRef = ref(db, 'posts/html');
+    const newPostRef = push(postListRef);
+    set(newPostRef, {
+
+      code: document.getElementById('code').value
+
+    });
+  }
+  writeUserData(code)
+
+}
+//CSS.............................................................................................................................
+
+
+document.getElementById("css").onclick = function () {
+
+  function writeUserData(code) {
+
+    const db = getDatabase();
+    const postListRef = ref(db, 'posts/css');
+    const newPostRef = push(postListRef);
+    set(newPostRef, {
+
+      code: document.getElementById('code').value
+
+    });
+  }
+  writeUserData(code)
+
+}
+//JS.............................................................................................................................
+
+document.getElementById("js").onclick = function () {
+
+  function writeUserData(code) {
+
+    const db = getDatabase();
+    const postListRef = ref(db, 'posts/js');
+    const newPostRef = push(postListRef);
+    set(newPostRef, {
+
+      code: document.getElementById('code').value
+
+    });
+  }
+  writeUserData(code)
+
+}
+
+//PY.............................................................................................................................
+
+document.getElementById("py").onclick = function () {
+
+  function writeUserData(code) {
+
+    const db = getDatabase();
+    const postListRef = ref(db, 'posts/py');
+    const newPostRef = push(postListRef);
+    set(newPostRef, {
+
+      code: document.getElementById('code').value
+
+    });
+  }
+  writeUserData(code)
+
 }
 
 
-document.getElementById('langHtmlBtn').onclick = function () {
-    document.getElementById('langHtmlBtn').style.display
-    document.getElementById('go').style.display = ''
-    document.getElementById('textUploadCode').style.display = ''
-    document.getElementById('textUploadCode').value = "Html"
-
-
-
-}
-document.getElementById('langCssBtn').onclick = function () {
-    document.getElementById('go').style.display = ''
-
-    document.getElementById('textUploadCode').style.display = ''
 
 
 
 
-}
-document.getElementById('langJsBtn').onclick = function () {
-    document.getElementById('go').style.display = ''
-
-    document.getElementById('textUploadCode').style.display = ''
-
-
-
-
-}
-document.getElementById('langPyBtn').onclick = function () {
-    document.getElementById('go').style.display = ''
-
-    document.getElementById('textUploadCode').style.display = ''
-
-
-
-
-}
-document.getElementById('langCpBtn').onclick = function () {
-    document.getElementById('go').style.display = ''
-
-    document.getElementById('textUploadCode').style.display = ''
-
-
-}
-document.getElementById('langCsBtn').onclick = function () {
-    document.getElementById('go').style.display = ''
-
-    document.getElementById('textUploadCode').style.display = ''
-
-
-
-
-}
-var data = {
-    a: document.getElementById('textUploadCode').value
-
-}
-document.getElementById('go').onclick = function () {
-    ref.push(data);
-}
