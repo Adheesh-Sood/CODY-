@@ -17,6 +17,21 @@ const firebaseConfig = {
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
+var network;
+
+function net(online) {
+  console.log(online)
+}
+window.addEventListener('load', () => {
+
+  net(navigator.onLine)
+  network = navigator.onLine;
+  if (network == false) {
+    netMode = "offline"
+    console.log('ofline')
+    document.getElementById('code').value = 'ofline'
+  }
+})
 
 
 document.getElementById("html").onclick = function () {
